@@ -58,8 +58,8 @@ int main()
 
 List MakeEmpty()
 {
-    List L=(List)malloc(sizeof(struct LNode));
-    L->Last = -1;
+    List L=(List)malloc(sizeof(struct LNode));//创建新的首地址
+    L->Last = -1;//第一个是0，所以空的是-1
     return L;
 }
 Position Find(List L, ElementType X)
