@@ -1,0 +1,4 @@
+﻿  test.cpp
+  sqstack1.cpp
+  正在生成代码...
+D:\CODE\Github\suanfa\栈1\栈1\sqstack1.cpp(3,9): error C1083: 无法打开包括文件: “sqstack1.h”: No such file or directory
