@@ -1,4 +1,0 @@
-﻿  Node.cpp
-D:\CODE\Github\suanfa\链表学习\链表学习\Node.cpp(62,12): warning C4244: “参数”: 从“time_t”转换到“unsigned int”，可能丢失数据
-D:\CODE\Github\suanfa\链表学习\链表学习\Node.cpp(61,6): warning C4101: “i”: 未引用的局部变量
-  链表学习.vcxproj -> D:\CODE\Github\suanfa\链表学习\x64\Debug\链表学习.exe
