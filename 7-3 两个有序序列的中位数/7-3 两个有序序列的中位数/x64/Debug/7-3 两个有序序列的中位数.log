@@ -1,0 +1,4 @@
+﻿  源.cpp
+D:\CODE\Github\suanfa\7-3 两个有序序列的中位数\7-3 两个有序序列的中位数\源.cpp(10,12): error C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+D:\CODE\Github\suanfa\7-3 两个有序序列的中位数\7-3 两个有序序列的中位数\源.cpp(16,9): error C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+D:\CODE\Github\suanfa\7-3 两个有序序列的中位数\7-3 两个有序序列的中位数\源.cpp(22,9): error C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
