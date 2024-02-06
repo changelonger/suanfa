@@ -9,7 +9,8 @@ struct sqqueue
 };
 void initqueue(sqqueue* q);
 int queuelenth(sqqueue q);
-
+//队列满判断：(q->rear + 1) % MAX == q->front
+//队列空判断：q->front == q->rear
 int main()
 {
 	return 0;
@@ -31,12 +32,13 @@ int enqueue(sqqueue* q, int e)
 	q->rear = (q->rear + 1) % MAX;
 	return 1;
 }
-int dequeue(sqqueue* q)
+int dequeue(sqqueue* q,int *i)
 {
 	if (q->front == q->rear)
 	{
 		return 0;
 	}
+	*i=q->date[q->front];
 	q->front = (q->front + 1) % MAX;
 
 	return 1;

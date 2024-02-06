@@ -1,0 +1,23 @@
+﻿  源.cpp
+D:\CODE\Github\suanfa\图邻接表\图邻接表\源.cpp(14,9): error C3646: “data”: 未知重写说明符
+D:\CODE\Github\suanfa\图邻接表\图邻接表\源.cpp(14,13): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+D:\CODE\Github\suanfa\图邻接表\图邻接表\源.cpp(42,30): error C2039: "data": 不是 "Vertexnode" 的成员
+  D:\CODE\Github\suanfa\图邻接表\图邻接表\源.cpp(12,8):
+  参见“Vertexnode”的声明
+  
+D:\CODE\Github\suanfa\图邻接表\图邻接表\源.cpp(42,9): warning C4473: “scanf”: 没有为格式字符串传递足够的参数
+  D:\CODE\Github\suanfa\图邻接表\图邻接表\源.cpp(42,9):
+  占位符和其参数预计 1 可变参数，但提供的却是 0 参数
+  D:\CODE\Github\suanfa\图邻接表\图邻接表\源.cpp(42,9):
+  缺失的可变参数 1 为格式字符串“%c”所需
+  
+D:\CODE\Github\suanfa\图邻接表\图邻接表\源.cpp(75,30): error C2039: "data": 不是 "Vertexnode" 的成员
+  D:\CODE\Github\suanfa\图邻接表\图邻接表\源.cpp(12,8):
+  参见“Vertexnode”的声明
+  
+D:\CODE\Github\suanfa\图邻接表\图邻接表\源.cpp(75,9): warning C4473: “printf”: 没有为格式字符串传递足够的参数
+  D:\CODE\Github\suanfa\图邻接表\图邻接表\源.cpp(75,9):
+  占位符和其参数预计 1 可变参数，但提供的却是 0 参数
+  D:\CODE\Github\suanfa\图邻接表\图邻接表\源.cpp(75,9):
+  缺失的可变参数 1 为格式字符串“%c”所需
+  
