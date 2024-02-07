@@ -1,0 +1,6 @@
+﻿  源.cpp
+D:\CODE\Github\suanfa\最小生成树-克鲁斯卡尔算法\最小生成树-克鲁斯卡尔算法\源.cpp(6,1): warning C4005: “INFINITY”: 宏重定义
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\ucrt\corecrt_math.h(88,1):
+  参见“INFINITY”的前一个定义
+  
+  最小生成树-克鲁斯卡尔算法.vcxproj -> D:\CODE\Github\suanfa\最小生成树-克鲁斯卡尔算法\x64\Debug\最小生成树-克鲁斯卡尔算法.exe
