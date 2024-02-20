@@ -2,10 +2,10 @@
 #include<stdio.h>
 #define MAX 9
 #define INFINITY 65535
-typedef int Pathmathirx[MAX];//ÓÃÓÚ´¢´æ×î¶ÌÂ·¾¶µãÏÂ±ê
-typedef int ShortPathTable[MAX];//ÓÃÓÚ´¢´æ¸öµãÂ·¾¶µÄÈ¨ÖµºÍ
-//DijkstraËã·¨£¬ÇóÓĞÏòÍøÂçGµÄv0¶¥µãµ½ÆäÓà¶¥µãvµÄ×î¶ÌÂ·¾¶p[v]ºÍ´øÈ¨³¤¶ÈD[v]
-//p[v]µÄÖµÎªÇ°Çı¶¥µãµÄÏÂ±ê£¬D[v]±íÊ¾´Óv0µ½vµÄ×î¶ÌÂ·¾¶³¤¶ÈºÍ
+typedef int Pathmathirx[MAX];//ç”¨äºå‚¨å­˜æœ€çŸ­è·¯å¾„ç‚¹ä¸‹æ ‡
+typedef int ShortPathTable[MAX];//ç”¨äºå‚¨å­˜ä¸ªç‚¹è·¯å¾„çš„æƒå€¼å’Œ
+//Dijkstraç®—æ³•ï¼Œæ±‚æœ‰å‘ç½‘ç»œGçš„v0é¡¶ç‚¹åˆ°å…¶ä½™é¡¶ç‚¹vçš„æœ€çŸ­è·¯å¾„p[v]å’Œå¸¦æƒé•¿åº¦D[v]
+//p[v]çš„å€¼ä¸ºå‰é©±é¡¶ç‚¹çš„ä¸‹æ ‡ï¼ŒD[v]è¡¨ç¤ºä»v0åˆ°vçš„æœ€çŸ­è·¯å¾„é•¿åº¦å’Œ
 struct MGraph
 {
 	int arc[MAX][MAX];
@@ -42,11 +42,12 @@ void hortestPathDijkstra(MGraph G, int V0, Pathmathirx* p, ShortPathTable* d)
 		for (w = 0; w < G.numv; w++)
 		{
 			if (!final[w] && (min + G.arc[k][w] < (*d)[w]))
-			//¾ÙÀı£º
+			//ä¸¾ä¾‹ï¼š
 			//0-1 1
 			//0-2 5
 			//1-2 3
-			//´ËÊ±¾Í°Ñ0-2µÄ¾àÀë±ä³É0-1 + 1-2µÄ¾àÀë
+   //æ­¤æ—¶ï¼Œminæ˜¯åˆ°åŸç‚¹æœ€è¿‘çš„ç‚¹
+			//æ­¤æ—¶å°±æŠŠ0-2çš„è·ç¦»å˜æˆ0-1 + 1-2çš„è·ç¦»
 			{
 				(*d)[w] = min + G.arc[k][w];
 				(*p)[w] = k;
@@ -57,7 +58,7 @@ void hortestPathDijkstra(MGraph G, int V0, Pathmathirx* p, ShortPathTable* d)
 }
 void CreatMGraph(MGraph* G)
 {
-	printf("ÇëÊäÈë¶¥µãÊıºÍ±ßÊı£º\n");
+	printf("è¯·è¾“å…¥é¡¶ç‚¹æ•°å’Œè¾¹æ•°ï¼š\n");
 	scanf("%d%d", &G->numv, &G->nume);
 	for (int i = 0; i < G->numv; i++)
 	{
@@ -68,7 +69,7 @@ void CreatMGraph(MGraph* G)
 	}
 	for (int i = 0; i < G->nume; i++)
 	{
-		printf("ÇëÊäÈë±ßºÍÈ¨ÖØ£º\n");
+		printf("è¯·è¾“å…¥è¾¹å’Œæƒé‡ï¼š\n");
 		getchar();
 		int a, b, w;
 		scanf("%d%d%d", &a, &b, &w);
