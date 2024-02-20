@@ -6,19 +6,20 @@
 using namespace std;
 void getnext(string T, int next[]);
 int IndexKMP(string s, string t, int pos);
+void getnextval(string T, int nextval[]);
 int main()
 {
 	string T;
 	cin >> T;
 	int next[10] = {0};
-	getnext(T, next);
+	getnextval(T, next);
 	printf("%d\n", T.length());
 	for (int i = 1; i < T.length();i++)
 	{
 		printf("%d ", next[i]);
 	}
 	return 0;
-}
+}	  
 void getnext(string T,int next[])
 {
 	int i = 1; int j = 0;
@@ -65,6 +66,8 @@ void getnextval(string T, int nextval[])
 			//这里的j仍然是应该跳到的值
 			//应为相等，所以直接跳到nextval[i]就可以了，省去了剩下的几个步骤、
 		}
+		else
+			j = nextval[j];
 	}
 }
 int IndexKMP(string s, string t, int pos)
@@ -96,7 +99,7 @@ int Index(string s, string t, int pos)
 	int j = 1;
 	while (i <= s[0] && j <= t[0])
 	{
-		if (s[i] = t[j])
+		if (s[i] == t[j])
 		{
 			i++;
 			j++;
@@ -105,6 +108,7 @@ int Index(string s, string t, int pos)
 		{
 			i = i - j + 2;
 			j = 1;
+			//j每次初始值都是1
 		}
 	}
 	if (j > t[0])

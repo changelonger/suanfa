@@ -1,18 +1,7 @@
 ﻿  源.cpp
 D:\CODE\Github\suanfa\KMP模式匹配算法实现\KMP模式匹配算法实现\源.cpp(4,9): warning C4067: 预处理器指令后有意外标记 - 应输入换行符
-D:\CODE\Github\suanfa\KMP模式匹配算法实现\KMP模式匹配算法实现\源.cpp(18,9): warning C4477: “printf”: 格式字符串“%d”需要类型“int”的参数，但可变参数 1 拥有了类型“unsigned __int64”
-  D:\CODE\Github\suanfa\KMP模式匹配算法实现\KMP模式匹配算法实现\源.cpp(18,9):
+D:\CODE\Github\suanfa\KMP模式匹配算法实现\KMP模式匹配算法实现\源.cpp(16,9): warning C4477: “printf”: 格式字符串“%d”需要类型“int”的参数，但可变参数 1 拥有了类型“unsigned __int64”
+  D:\CODE\Github\suanfa\KMP模式匹配算法实现\KMP模式匹配算法实现\源.cpp(16,9):
   请考虑在格式字符串中使用“%zd”
   
-D:\CODE\Github\suanfa\KMP模式匹配算法实现\KMP模式匹配算法实现\源.cpp(95,11): error C2065: “str444444444444444e”: 未声明的标识符
-D:\CODE\Github\suanfa\KMP模式匹配算法实现\KMP模式匹配算法实现\源.cpp(97,2): error C2062: 意外的类型“int” 
-D:\CODE\Github\suanfa\KMP模式匹配算法实现\KMP模式匹配算法实现\源.cpp(97,13): error C2143: 语法错误: 缺少“)”(在“;”的前面)
-D:\CODE\Github\suanfa\KMP模式匹配算法实现\KMP模式匹配算法实现\源.cpp(99,2): error C2059: 语法错误:“while”
-D:\CODE\Github\suanfa\KMP模式匹配算法实现\KMP模式匹配算法实现\源.cpp(100,2): error C2143: 语法错误: 缺少“;”(在“{”的前面)
-D:\CODE\Github\suanfa\KMP模式匹配算法实现\KMP模式匹配算法实现\源.cpp(100,2): error C2447: “{”: 缺少函数标题(是否是老式的形式表?)
-D:\CODE\Github\suanfa\KMP模式匹配算法实现\KMP模式匹配算法实现\源.cpp(112,2): error C2059: 语法错误:“if”
-D:\CODE\Github\suanfa\KMP模式匹配算法实现\KMP模式匹配算法实现\源.cpp(113,2): error C2143: 语法错误: 缺少“;”(在“{”的前面)
-D:\CODE\Github\suanfa\KMP模式匹配算法实现\KMP模式匹配算法实现\源.cpp(113,2): error C2447: “{”: 缺少函数标题(是否是老式的形式表?)
-D:\CODE\Github\suanfa\KMP模式匹配算法实现\KMP模式匹配算法实现\源.cpp(116,2): error C2059: 语法错误:“else”
-D:\CODE\Github\suanfa\KMP模式匹配算法实现\KMP模式匹配算法实现\源.cpp(118,1): error C2059: 语法错误:“}”
-D:\CODE\Github\suanfa\KMP模式匹配算法实现\KMP模式匹配算法实现\源.cpp(118,1): error C2143: 语法错误: 缺少“;”(在“}”的前面)
+  KMP模式匹配算法实现.vcxproj -> D:\CODE\Github\suanfa\KMP模式匹配算法实现\x64\Debug\KMP模式匹配算法实现.exe
