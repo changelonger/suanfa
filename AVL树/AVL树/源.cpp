@@ -1,7 +1,7 @@
 #define _CRT_SECURE_NO_WARNINGS 1
 #include<stdio.h>
 #include<stdlib.h>
-//¶¨ÒåÊ÷µÄ½á¹¹
+//å®šä¹‰æ ‘çš„ç»“æ„
 typedef struct BiTNode
 {
 	int height;
@@ -9,7 +9,7 @@ typedef struct BiTNode
 	BiTNode* lchild, * rchild;
 }*BiTree;
 
-//¶¨Òå»ñÈ¡Ê÷¸ß
+//å®šä¹‰è·å–æ ‘é«˜
 int getheight(BiTree T)
 {
 	if (T == NULL)
@@ -18,60 +18,60 @@ int getheight(BiTree T)
 		return T->height;
 }
 
-//»ñµÃ×î´óÖµ
+//è·å¾—æœ€å¤§å€¼
 int max(int a, int b)
 {
 	return (a > b) ? a : b;
 }
 
-//¶¨Òå×óĞıº¯Êı
+//å®šä¹‰å·¦æ—‹å‡½æ•°
 void leftRotate(BiTree* T)
 {
-	BiTree R = (*T)->rchild;//ĞÂ¸ù½ÚµãÊÇ¾É¸ù½áµãµÄÓÒ×ÓÊ÷
-	(*T)->rchild = R->lchild;//ĞÂ¸ù½ÚµãµÄ×ó×ÓÊ÷£¨Èç¹û´æÔÚ£©ÊÇ¾É¸ù½áµãµÄÓÒ×ÓÊ÷
-	R->lchild = (*T);//¾É½áµãÊÇĞÂ¸ù½ÚµãµÄ×ó×ÓÊ÷
-	//¸üĞÂÊ÷¸ß
+	BiTree R = (*T)->rchild;//æ–°æ ¹èŠ‚ç‚¹æ˜¯æ—§æ ¹ç»“ç‚¹çš„å³å­æ ‘
+	(*T)->rchild = R->lchild;//æ–°æ ¹èŠ‚ç‚¹çš„å·¦å­æ ‘ï¼ˆå¦‚æœå­˜åœ¨ï¼‰æ˜¯æ—§æ ¹ç»“ç‚¹çš„å³å­æ ‘
+	R->lchild = (*T);//æ—§ç»“ç‚¹æ˜¯æ–°æ ¹èŠ‚ç‚¹çš„å·¦å­æ ‘
+	//æ›´æ–°æ ‘é«˜
 	(*T)->height = 1 + max(getheight((*T)->lchild), getheight((*T)->rchild));
 	R->height = 1 + max(getheight(R->lchild), getheight(R->rchild));
-	*T = R;//ÖØĞÂÈÃTÖ¸ÏòĞÂ¸ù½áµã
+	*T = R;//é‡æ–°è®©TæŒ‡å‘æ–°æ ¹ç»“ç‚¹
 }
 
-//¶¨ÒåÓÒĞıº¯Êı
+//å®šä¹‰å³æ—‹å‡½æ•°
 void RightRotate(BiTree* T)
 {
-	BiTree L = (*T)->lchild;//ĞÂ¸ù½ÚµãÊÇ¾É¸ú½ÚµãµÄ×ó×ÓÊ÷
-	(*T)->lchild = L->rchild;//ĞÂ¸ù½ÚµãµÄÓÒ×ÓÊ÷£¨Èç¹û´æÔÚ£©ÊÇ¾É½áµãµÄ×ó×ÓÊ÷
-	L->rchild = (*T);//¾É¸ù½ÚµãÊÇĞÂ¸ù½ÚµãµÄÓÒº¢×Ó
+	BiTree L = (*T)->lchild;//æ–°æ ¹èŠ‚ç‚¹æ˜¯æ—§è·ŸèŠ‚ç‚¹çš„å·¦å­æ ‘
+	(*T)->lchild = L->rchild;//æ–°æ ¹èŠ‚ç‚¹çš„å³å­æ ‘ï¼ˆå¦‚æœå­˜åœ¨ï¼‰æ˜¯æ—§ç»“ç‚¹çš„å·¦å­æ ‘
+	L->rchild = (*T);//æ—§æ ¹èŠ‚ç‚¹æ˜¯æ–°æ ¹èŠ‚ç‚¹çš„å³å­©å­
 	(*T)->height = 1 + max(getheight((*T)->lchild), getheight((*T)->rchild));
 	L->height = 1 + max(getheight(L->lchild), getheight(L->rchild));
-	*T = L;//ÖØĞÂÈÃTÖ¸ÏòĞÂ¸ù½Úµã
+	*T = L;//é‡æ–°è®©TæŒ‡å‘æ–°æ ¹èŠ‚ç‚¹
 }
 
-//µÃµ½bfÖµ
+//å¾—åˆ°bfå€¼
 int getbf(BiTree T)
 {
 	return getheight(T->lchild) - getheight(T->rchild);
 }
 
-//ËÄÖÖÊ§ºâµÄÆ½ºâ´¦Àí
+//å››ç§å¤±è¡¡çš„å¹³è¡¡å¤„ç†
 void Balance(BiTree* T)
 {
-	//1¡¢LLĞÍ
+	//1ã€LLå‹
 	if (getbf(*T) > 1 && getbf((*T)->lchild) > 0)
 	{
 		RightRotate(T);
 	}
-	//2¡¢RRĞÍ
+	//2ã€RRå‹
 	else if (getbf(*T) < -1 && getbf((*T)->rchild) < 0)
 		leftRotate(T);
-	//3¡¢LRĞÍ
+	//3ã€LRå‹
 	else if (getbf(*T) > 1 && getbf((*T)->lchild) < 0)
 	{
 		leftRotate(&(*T)->lchild);
 		RightRotate(T);
 	}
 
-	//4¡¢RRĞÍ
+	//4ã€RRå‹
 	else if (getbf(*T) < -1 && getbf((*T)->rchild) > 0)
 	{
 		RightRotate(&(*T)->rchild);
@@ -79,7 +79,7 @@ void Balance(BiTree* T)
 	}
 }
 
-//´´½¨ĞÂµÄ½áµã
+//åˆ›å»ºæ–°çš„ç»“ç‚¹
 BiTree Creatnode(int key)
 {
 	BiTree T = (BiTree)malloc(sizeof(BiTNode));
@@ -90,7 +90,7 @@ BiTree Creatnode(int key)
 	return T;
 }
 
-//AVLÊ÷µÄ²åÈëÔì×÷
+//AVLæ ‘çš„æ’å…¥é€ ä½œ
 void InsertAVL(BiTree* T, int key)
 {
 	if ((*T) == NULL)
@@ -104,15 +104,61 @@ void InsertAVL(BiTree* T, int key)
 		 InsertAVL(&(*T)->rchild, key);
 	else
 	{
-		printf("%dÒÑ¾­´æÔÚÁË\n", key);
+		printf("%då·²ç»å­˜åœ¨äº†\n", key);
 		return;
 	}
 	(*T)->height= 1 + max(getheight((*T)->lchild), getheight((*T)->rchild));
-	//Æ½ºâ´¦Àí
+	//å¹³è¡¡å¤„ç†
 	Balance(T);
 }
 
-//Ç°Ğò±éÀú
+void Del(BiTree*T)
+{
+	if ((*T)->lchild == NULL)
+	{
+		BiTree q = *T;
+		(*T) = (*T)->rchild;
+		free(q);
+	}
+	else if ((*T)->rchild == NULL)
+	{
+		BiTree* q = T;
+		(*T) = (*T)->lchild;
+		free(q);
+	}
+	else
+	{
+		BiTree s = (*T)->lchild;
+		BiTree q = (*T);
+		while (s->rchild)
+		{
+			q = s;
+			s = s->rchild;//qæ˜¯sçš„ç›´æ¥å‰ç»§
+		}
+		(*T)->data = s->data;//æŠŠåˆ é™¤èŠ‚ç‚¹çš„æ•°æ®å˜ä¸ºå®ƒçš„å‰ç»§çš„æ•°æ®
+		//ä»¥ä¸‹æƒ…å†µæ˜¯Tçš„å·¦å­æ ‘æ²¡æœ‰å³å­æ ‘
+		//æ­¤æ—¶ï¼Œqå’ŒTç›¸ç­‰,å°‘è§
+		if (q != *T)
+			q->rchild = s->lchild;
+		else
+			q->lchild = s->lchild;
+		free(s);
+	}
+}
+void DeleteAVL(BiTree* T,int key)
+{
+	if (*T == NULL)
+		printf("åˆ é™¤å¤±è´¥\n");
+	else if (key < (*T)->data)
+		DeleteAVL(&(*T)->lchild, key);
+	else if (key > (*T)->data)
+		DeleteAVL(&(*T)->rchild, key);
+	else
+		Del(T);
+	(*T)->height=1+ max(getheight((*T)->lchild), getheight((*T)->rchild));
+}
+
+//å‰åºéå†
 void pre(BiTree T)
 {
 	if (T)
@@ -125,7 +171,7 @@ void pre(BiTree T)
 		return;
 }
 
-//ÖĞĞò±éÀú
+//ä¸­åºéå†
 void mid(BiTree T)
 {
 	if (T)
@@ -138,7 +184,7 @@ void mid(BiTree T)
 		return;
 }
 
-//Ö÷º¯Êı
+//ä¸»å‡½æ•°
 int main()
 {
 	BiTree T = NULL;
@@ -148,9 +194,14 @@ int main()
 		InsertAVL(&T, arr[i]);
 		
 	}
-	printf("Ç°Ğò±éÀú½á¹ûÊÇ£º\n");
+	printf("å‰åºéå†ç»“æœæ˜¯ï¼š\n");
 	pre(T);
-	printf("\nÖĞĞò±éÀú½á¹ûÊÇ£º\n");
+	printf("\nä¸­åºéå†ç»“æœæ˜¯ï¼š\n");
+	mid(T);
+	DeleteAVL(&T, 7);
+	printf("\nå‰åºéå†ç»“æœæ˜¯ï¼š\n");
+	pre(T);
+	printf("\nä¸­åºéå†ç»“æœæ˜¯ï¼š\n");
 	mid(T);
 	return 0;
 }
