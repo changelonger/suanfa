@@ -53,7 +53,7 @@ void CreatALGraph(GraphAdjList* G)
 		e = (Edgenode*)malloc(sizeof(Edgenode));
 		e->weight = 1;
 		//从小到大
-		if (G->adjList[i].fistedge == NULL || j < G->adjList[i].fistedge->adjvex)//为空，大于第一个，直接插，或者比后面的小 
+		if (G->adjList[i].fistedge == NULL || j < G->adjList[i].fistedge->adjvex)//为空，小于第一个，直接插
 		{
 			e->adjvex = j;
 			e->next = G->adjList[i].fistedge;
