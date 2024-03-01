@@ -112,6 +112,52 @@ void InsertAVL(BiTree* T, int key)
 	Balance(T);
 }
 
+void Del(BiTree*T)
+{
+	if ((*T)->lchild == NULL)
+	{
+		BiTree q = *T;
+		(*T) = (*T)->rchild;
+		free(q);
+	}
+	else if ((*T)->rchild == NULL)
+	{
+		BiTree* q = T;
+		(*T) = (*T)->lchild;
+		free(q);
+	}
+	else
+	{
+		BiTree s = (*T)->lchild;
+		BiTree q = (*T);
+		while (s->rchild)
+		{
+			q = s;
+			s = s->rchild;//q是s的直接前继
+		}
+		(*T)->data = s->data;//把删除节点的数据变为它的前继的数据
+		//以下情况是T的左子树没有右子树
+		//此时，q和T相等,少见
+		if (q != *T)
+			q->rchild = s->lchild;
+		else
+			q->lchild = s->lchild;
+		free(s);
+	}
+}
+void DeleteAVL(BiTree* T,int key)
+{
+	if (*T == NULL)
+		printf("删除失败\n");
+	else if (key < (*T)->data)
+		DeleteAVL(&(*T)->lchild, key);
+	else if (key > (*T)->data)
+		DeleteAVL(&(*T)->rchild, key);
+	else
+		Del(T);
+	(*T)->height=1+ max(getheight((*T)->lchild), getheight((*T)->rchild));
+}
+
 //前序遍历
 void pre(BiTree T)
 {
@@ -149,6 +195,11 @@ int main()
 		
 	}
 	printf("前序遍历结果是：\n");
+	pre(T);
+	printf("\n中序遍历结果是：\n");
+	mid(T);
+	DeleteAVL(&T, 7);
+	printf("\n前序遍历结果是：\n");
 	pre(T);
 	printf("\n中序遍历结果是：\n");
 	mid(T);

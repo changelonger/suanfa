@@ -108,7 +108,6 @@ int DeleteBST(BiTree* T, int key)
 		DeleteBST(&(*T)->rchild, key);
 	else
 		return Delete(T);
-
 }
 //int main()
 //{
