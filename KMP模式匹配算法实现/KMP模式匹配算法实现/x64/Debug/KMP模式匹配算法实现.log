@@ -1,4 +1,5 @@
 ﻿  源.cpp
+D:\CODE\Github\suanfa\KMP模式匹配算法实现\KMP模式匹配算法实现\源.cpp(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
 D:\CODE\Github\suanfa\KMP模式匹配算法实现\KMP模式匹配算法实现\源.cpp(4,9): warning C4067: 预处理器指令后有意外标记 - 应输入换行符
 D:\CODE\Github\suanfa\KMP模式匹配算法实现\KMP模式匹配算法实现\源.cpp(16,9): warning C4477: “printf”: 格式字符串“%d”需要类型“int”的参数，但可变参数 1 拥有了类型“unsigned __int64”
   D:\CODE\Github\suanfa\KMP模式匹配算法实现\KMP模式匹配算法实现\源.cpp(16,9):
