@@ -1,7 +1,7 @@
 #define _CRT_SECURE_NO_WARNINGS 1
 #include<stdio.h>
 #include <stdlib.h>
-#define MAX 10
+#define MAX 40
 struct Edgenode
 {
 	int adjvex;
@@ -22,39 +22,39 @@ struct graphAdjlist
 };
 typedef graphAdjlist* GraphAdjist;
 
-//int ToplogicalSort(GraphAdjist Gl)
-//{
-//	Edgenode* e;
-//	int i, k, gettop;
-//
-//	int top = 0;
-//	int count = 0;
-//	int stack[MAX];
-//	for (i = 0; i < Gl->numv; i++)
-//	{
-//		if (Gl->adjlist[i].in == 0)
-//		{
-//			stack[++top] = i;
-//			
-//		}
-//	}
-//	while(top)
-//	{
-//		gettop = stack[top--];
-//		printf("%d->", Gl->adjlist[gettop].data);
-//		count++;
-//		for (e = Gl->adjlist[gettop].firstedge;e;e = e->next)
-//		{
-//			k = e->adjvex;
-//			if (!(--Gl->adjlist[k].in))
-//			stack[++top] = k;
-//		}
-//	}
-//	if (count < Gl->numv)
-//		return 0;
-//	else
-//		return 1;
-//}
+int ToplogicalSort(GraphAdjist Gl)
+{
+	Edgenode* e;
+	int i, k, gettop;
+
+	int top = 0;
+	int count = 0;
+	int stack[MAX];
+	for (i = 0; i < Gl->numv; i++)
+	{
+		if (Gl->adjlist[i].in == 0)
+		{
+			stack[++top] = i;
+			
+		}
+	}
+	while(top)
+	{
+		gettop = stack[top--];
+		printf("%d->", Gl->adjlist[gettop].data);
+		count++;
+		for (e = Gl->adjlist[gettop].firstedge;e;e = e->next)
+		{
+			k = e->adjvex;
+			if (!(--Gl->adjlist[k].in))
+			stack[++top] = k;
+		}
+	}
+	if (count < Gl->numv)
+		return 0;
+	else
+		return 1;
+}
 void CreatGraphAdjist(GraphAdjist G)
 {
 	printf("请输入结点数和边数：\n");
@@ -65,6 +65,8 @@ void CreatGraphAdjist(GraphAdjist G)
 		G->adjlist[i].firstedge = NULL;
 		G->adjlist[i].data = i;
 	}
+
+
 	for (int i = 0; i < G->nume; i++)
 	{
 		printf("请输入Vi->Vj中的i,j\n");
@@ -110,33 +112,34 @@ void CreatGraphAdjist(GraphAdjist G)
 		}
 	}
 }
-//int main()
-//{
-//	graphAdjlist G;
-//	CreatGraphAdjist(&G);
-//	ToplogicalSort(&G); 
-//	return 0;
-//}
-//13 20
-//0 11
-//1 4
-//2 5
-//0 5
-//1 8
-//2 6
-//0 4
-//1 2
-//2 9
-//3 2
-//3 13
-//4 7
-//5 12 
-//5 8
-//6 5
-//8 7
-//9 11
-//9 10
-//10 13
-//12 9
-//
+int main()
+{
+	graphAdjlist G;
+	CreatGraphAdjist(&G);
+	ToplogicalSort(&G); 
+	return 0;
+}
+/*
+13 20
+0 11
+1 4
+2 5
+0 5
+1 8
+2 6
+0 4
+1 2
+2 9
+3 2
+3 13
+4 7
+5 12 
+5 8
+6 5
+8 7
+9 11
+9 10
+10 13
+12 9
+*/
 

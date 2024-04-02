@@ -1,4 +1,4 @@
-#define _CRT_SECURE_NO_WARNINGS 1
+ï»¿#define _CRT_SECURE_NO_WARNINGS 1
 #include<stdio.h>
 #include<stdlib.h>
 //å®šä¹‰æ ‘çš„ç»“æž„
@@ -99,82 +99,20 @@ void InsertAVL(BiTree* T, int key)
 		return;
 	}
 	else if ((*T)->data > key)
-		 InsertAVL(&(*T)->lchild, key);
+		InsertAVL(&(*T)->lchild, key);
 	else if ((*T)->data < key)
-		 InsertAVL(&(*T)->rchild, key);
+		InsertAVL(&(*T)->rchild, key);
 	else
 	{
 		printf("%då·²ç»å­˜åœ¨äº†\n", key);
 		return;
 	}
-	(*T)->height= 1 + max(getheight((*T)->lchild), getheight((*T)->rchild));
+	(*T)->height = 1 + max(getheight((*T)->lchild), getheight((*T)->rchild));
 	//å¹³è¡¡å¤„ç†
 	Balance(T);
 }
 
-void Del(BiTree*T)
-{
-	if ((*T)->lchild == NULL)
-	{
-		BiTree q = *T;
-		(*T) = (*T)->rchild;
-		free(q);
-	}
-	else if ((*T)->rchild == NULL)
-	{
-		BiTree* q = T;
-		(*T) = (*T)->lchild;
-		free(q);
-	}
-	else
-	{
-		BiTree s = (*T)->lchild;
-		BiTree q = (*T);
-		while (s->rchild)
-		{
-			q = s;
-<<<<<<< HEAD
-			s = s->rchild;//qÊÇsµÄÖ±½ÓÇ°¼Ì
-		}
-		(*T)->data = s->data;//°ÑÉ¾³ý½ÚµãµÄÊý¾Ý±äÎªËüµÄÇ°¼ÌµÄÊý¾Ý
-		//ÒÔÏÂÇé¿öÊÇTµÄ×ó×ÓÊ÷Ã»ÓÐÓÒ×ÓÊ÷
-		//´ËÊ±£¬qºÍTÏàµÈ,ÉÙ¼û
-=======
-			s = s->rchild;//qæ˜¯sçš„ç›´æŽ¥å‰ç»§
-		}
-		(*T)->data = s->data;//æŠŠåˆ é™¤èŠ‚ç‚¹çš„æ•°æ®å˜ä¸ºå®ƒçš„å‰ç»§çš„æ•°æ®
-		//ä»¥ä¸‹æƒ…å†µæ˜¯Tçš„å·¦å­æ ‘æ²¡æœ‰å³å­æ ‘
-		//æ­¤æ—¶ï¼Œqå’ŒTç›¸ç­‰,å°‘è§
->>>>>>> 5e2f9fb3bd33efab837cefa628b4153e3ac7e8d4
-		if (q != *T)
-			q->rchild = s->lchild;
-		else
-			q->lchild = s->lchild;
-		free(s);
-	}
-}
-void DeleteAVL(BiTree* T,int key)
-{
-	if (*T == NULL)
-<<<<<<< HEAD
-		printf("É¾³ýÊ§°Ü\n");
-=======
-		printf("åˆ é™¤å¤±è´¥\n");
->>>>>>> 5e2f9fb3bd33efab837cefa628b4153e3ac7e8d4
-	else if (key < (*T)->data)
-		DeleteAVL(&(*T)->lchild, key);
-	else if (key > (*T)->data)
-		DeleteAVL(&(*T)->rchild, key);
-	else
-		Del(T);
-	(*T)->height=1+ max(getheight((*T)->lchild), getheight((*T)->rchild));
-}
-
-<<<<<<< HEAD
-//Ç°Ðò±éÀú
-=======
 //å‰åºéåŽ†
->>>>>>> 5e2f9fb3bd33efab837cefa628b4153e3ac7e8d4
 void pre(BiTree T)
 {
 	if (T)
@@ -208,21 +146,11 @@ int main()
 	for (int i = 0; i < 11; i++)
 	{
 		InsertAVL(&T, arr[i]);
-		
+
 	}
 	printf("å‰åºéåŽ†ç»“æžœæ˜¯ï¼š\n");
 	pre(T);
 	printf("\nä¸­åºéåŽ†ç»“æžœæ˜¯ï¼š\n");
-	mid(T);
-	DeleteAVL(&T, 7);
-	printf("\nå‰åºéåŽ†ç»“æžœæ˜¯ï¼š\n");
-	pre(T);
-	printf("\nä¸­åºéåŽ†ç»“æžœæ˜¯ï¼š\n");
-	mid(T);
-	DeleteAVL(&T, 7);
-	printf("\nÇ°Ðò±éÀú½á¹ûÊÇ£º\n");
-	pre(T);
-	printf("\nÖÐÐò±éÀú½á¹ûÊÇ£º\n");
 	mid(T);
 	return 0;
 }
